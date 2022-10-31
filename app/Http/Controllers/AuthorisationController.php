@@ -11,7 +11,7 @@ class AuthorisationController extends Controller
     //
     public function index()
     {
-        Gate::allows('isAdmin')? Response::allow():abort(403);
+        Gate::allows('isAdmin')? Response::allow():abort(403); //controller guard
         return "You are authorised";
     }
 }
