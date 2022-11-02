@@ -11,11 +11,16 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::with('user')->get();
-        return view('policy.index',compact('posts'));
+        return view('policy.index', compact('posts'));
     }
     public function show(Post $post)
     {
-
-        return view('policy.show')->with('post',$post);
+        $this->authorize('view',$post);
+        return view('policy.show')->with('post', $post);
+    }
+    public function destroy(Post $post){
+        $this->authorize('delete', $post);
+        $post->delete();
+        return redirect()->route('post.index');
     }
 }

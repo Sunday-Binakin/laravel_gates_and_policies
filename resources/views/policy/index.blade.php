@@ -23,9 +23,12 @@
                         <td>{{ $post->title }}</td>
                         <td>{{ $post->description }}</td>
                         <td>{{ $post->user->name }}</td>
-                        <td>
+                        <td style="display: flex">
                             @can('view', $post)
                             <a href="{{ route('post.show',$post) }}" class="btn btn-success">View</a>
+                            @endcan
+                            @can('delete', $post)
+                            <a href="{{ route('post.destroy',$post) }}" class="btn btn-danger">Delete</a>
                             @endcan
 
 

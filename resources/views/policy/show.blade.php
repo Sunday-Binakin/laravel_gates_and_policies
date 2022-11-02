@@ -5,9 +5,9 @@
     <hr>
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card" style="width: 18rem;">
+            <div class="card" style="background: rgb(126, 126, 157)">
                 <div class="card-body">
-                    <h5 class="card-title">{{ post->title }}</h5>
+                    <h5 class="card-title">{{ $post->title }}</h5>
                     <p class="card-text">{{ $post->description }}</p>
                     <a href="{{ route('post.index') }}" class="btn btn-info">Home</a>
                 </div>
@@ -15,3 +15,4 @@
         </div>
     </div>
     @endsection
+   

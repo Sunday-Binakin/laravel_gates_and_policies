@@ -15,16 +15,20 @@
                         @endif
 
                         {{ __('You are logged in!') }}
+                        <br>
 
                         @can('isAdmin')
                             <h4 class="text-center">This is for Admin</h4>
                         @endcan
                         @can('isUser')
                             <h4 class="text-center">This is for User</h4>
+
                         @endcan
                         @can('isEditor')
-                            <h4>This is for Editor</h4>
+                            <h4 class="text-center">This is for Editor</h4>
                         @endcan
+                        <br>
+                        <a href="{{ route('post.index') }}" class="btn btn-secondary">Go to Post</a>
                     </div>
                 </div>
             </div>
